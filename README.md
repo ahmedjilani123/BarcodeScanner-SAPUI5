@@ -10,3 +10,5 @@
 <img src="./ScannerBQ/Images/Dialog.png" alt="Dialog" width="700" height="400">
 <p>show all data to the Table</p>
 <img src="./ScannerBQ/Images/ShowAllData.png" alt="Second Page" width="700" height="400">
+<p>Click material code to show all the Details for product </p>
+<img src="./ScannerBQ/Images/MaterialCodeshowAllDetail.png" alt="Second Page" width="700" height="400">

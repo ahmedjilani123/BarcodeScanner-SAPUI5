@@ -8,5 +8,5 @@
 <img src="./ScannerBQ/Images/secondPage.png" alt="Second Page" width="700" height="400">
 <p>Dialog </p>
 <img src="./ScannerBQ/Images/Dialog.png" alt="Dialog" width="700" height="400">
-<p>show data to the Table</p>
+<p>show all data to the Table</p>
 <img src="./ScannerBQ/Images/ShowAllData.png" alt="Second Page" width="700" height="400">

@@ -1,0 +1,197 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "sap.ajScannerBQ",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.38.11"
+		},
+		"dataSources": {
+			"PackingData": {
+				"uri": "model/Packing.json",
+				"type": "JSON"
+			},
+			"DeliveryData": {
+				"uri": "model/Delivery.json",
+				"type": "JSON"
+			},
+			"SfConfirm": {
+				"uri": "model/SfConfirmation.json",
+				"type": "JSON"
+			},
+			"StockList": {
+				"uri": "model/Stock.json",
+				"type": "JSON"
+			},
+			"HeaderTitle": {
+				"uri": "model/headerTitle.json",
+				"type": "JSON"
+			},
+			"ItemPressDetail": {
+				"uri": "model/ItemPressTable.json",
+				"type": "JSON"
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": ["sap_hcb", "sap_bluecrystal"]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "sap.ajScannerBQ.view.View1",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.ajScannerBQ.i18n.i18n"
+				}
+			},
+			"PackingAndPrint": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "PackingData"
+			},
+			"Deliveryandpgi": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "DeliveryData"
+			},
+			"SfConfirmationM": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "SfConfirm"
+			},
+			"StockfragmentData": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "StockList"
+			},
+			"Header": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "HeaderTitle"
+			},
+			"AllItemPress": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "ItemPressDetail"
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewPath": "sap.ajScannerBQ.view",
+				"controlId": "app",
+				"async": true,
+				"viewLevel": 1,
+				"controlAggregation": "pages",
+				"clearAggregation": false
+			},
+			"targets": {
+				"View1": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "View1",
+					"viewLevel": 1
+				},
+				"Scan1": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Scan1",
+					"viewLevel": 2
+				},
+				"Scan2": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Scan2",
+					"viewLevel": 3
+				},
+				"Scan3Stock": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Scan3Stock",
+					"viewLevel": 4
+				},
+				"Scan3SF": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Scan3SF"
+				}
+			},
+			"routes": [{
+				"name": "View1",
+				"pattern": "",
+				"titleTarget": "View1",
+				"greedy": false,
+				"target": ["View1"]
+			}, {
+				"name": "SFG_Confirmation",
+				"pattern": "SFG Confirmation",
+				"titleTarget": "Scan1",
+				"greedy": false,
+				"target": ["Scan1"]
+			}, {
+				"name": "Delivery_PGI",
+				"pattern": "Delivery and PGI",
+				"titleTarget": "Scan2",
+				"greedy": false,
+				"target": ["Scan2"]
+			}, {
+				"name": "Stock",
+				"pattern": "Stock Transfer",
+				"titleTarget": "Scan3Stock",
+				"greedy": false,
+				"target": ["Scan3Stock"]
+			}, {
+				"name": "FG_Confirmation",
+				"pattern": "FG Confirmation",
+				"titleTarget": "Scan3SF",
+				"greedy": false,
+				"target": ["Scan3SF"]
+			}]
+		}
+	}
+}

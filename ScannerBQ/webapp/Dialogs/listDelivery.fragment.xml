@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+<Dialog title="List Item">
+<content>
+<List items="{Deliveryandpgi>/Sales}">
+	<ObjectListItem type="Active" press="SelectedItemDialogDeliveryPress" title="{Deliveryandpgi>SalesOrder}"></ObjectListItem>
+</List>
+</content>
+<endButton>
+<Button text="Cancel" press="CancelDialogListPress"></Button>
+</endButton>
+</Dialog>
+</core:FragmentDefinition>

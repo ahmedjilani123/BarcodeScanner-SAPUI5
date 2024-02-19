@@ -1,0 +1,15 @@
+<core:FragmentDefinition  xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.suite.ui.commons"
+    xmlns="sap.m">
+	<HBox width="100%" class="homeTitle" justifyContent="SpaceBetween" alignItems="Center" backgroundDesign="Solid" height="4rem">
+		<HBox alignItems="Center">
+			<Button icon="sap-icon://nav-back" tooltip="back" type="Transparent" visible="{= ${Header>/Title}==='Barcode Scanner' ? false : true}" press="BackToHomePress"></Button>
+				<Image src="./Images/login.png" tooltip="logo" width="8rem" ></Image>
+		</HBox>
+					
+						<HBox class="headerInnerTitle" width="56%">
+							<!--<Title text="Packing and Printing" class="sapUiSmallMarginEnd"></Title>-->
+							<ObjectNumber tooltip="title" class="sapMObjectNumberLarge sapUiSmallMarginEnd" number="{Header>/Title}" state="Success"/>
+						</HBox>
+					</HBox>
+</core:FragmentDefinition>

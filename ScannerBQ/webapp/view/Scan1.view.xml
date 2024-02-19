@@ -1,0 +1,90 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.ajScannerBQ.controller.Scan1"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="SFG Confirmation" showFooter="true" showNavButton="true" navButtonPress="BackToHomePress" showHeader="false">
+				<content>
+					<core:Fragment fragmentName="sap.ajScannerBQ.fragments.mainHeader" type="XML"/>
+					<HBox justifyContent="Center" wrap="Wrap" backgroundDesign="Solid">
+						<VBox class="sapUiTinyMargin">
+							<Label text="{i18n>ConfirmOder}"></Label>
+							<HBox>
+							<Input showValueHelp="true" width="9rem" value="{MaterialList>/header/ConfirmNum}" valueHelpRequest="handleListDataPackingPress"></Input>
+							<Button icon="sap-icon://bar-code" type="Emphasized" class="sapUiTinyMarginBegin" press="HandleHeaderScanPress"></Button></HBox>
+						</VBox>
+						<VBox class="sapUiTinyMargin">
+							<Label text="{i18n>MaterialCode}"></Label>
+							<Input enabled="false" value="{MaterialList>/header/MaterialCode}"></Input>
+						</VBox>
+						<VBox class="sapUiTinyMargin">
+							<Label text="{i18n>MaterialDes}"></Label>
+							<Input enabled="false" value="{MaterialList>/header/MaterialDes}"></Input>
+						</VBox>
+						<VBox class="sapUiTinyMargin">
+							<Label text="{i18n>UnirOfMeasure}"></Label>
+							<Input enabled="false" value="{MaterialList>/header/UnitOfMeasure}"></Input>
+						</VBox>
+						<VBox class="sapUiTinyMargin">
+							<Label text="{i18n>Quantity}"></Label>
+							<Input enabled="false" value="{MaterialList>/header/Quantity}"></Input>
+						</VBox>
+						<VBox class="sapUiTinyMargin">
+							<Label text="{i18n>TotalScan}"></Label>
+							<VBox justifyContent="Start" alignContent="End" alignItems="End">
+								<Input enabled="false" value="{MaterialList>/header/TotalScan}" ></Input>
+								<HBox width="12rem" justifyContent="Center" class="sapUiTinyMarginEnd">
+									<RadioButtonGroup id="GroupRadioBtnID" columns="3" width="10rem" selectedIndex="-1" select="HandleSelectionChangeSFG">
+										<RadioButton text="All" ></RadioButton>
+										<RadioButton text="Reject" ></RadioButton>
+									</RadioButtonGroup>
+									<Button id="ScannerBtnMainPress" text="Scan" enabled="false" type="Emphasized" press="onScanPackingPress"></Button>
+								</HBox>
+							</VBox>
+						</VBox>
+						<!--<VBox class="sapUiTinyMargin">-->
+						<!--</VBox>-->
+					</HBox>
+					<Table id="exportTable" items="{MaterialTable>/}" inset="true" class="sapFDynamicPageAlignContent" growing="true" growingThreshold="10"
+						width="auto">
+						<headerToolbar >
+							<Toolbar design="Solid">
+								<Title text="Materials"></Title>
+								<!-- <Button type="Neutral" icon="sap-icon://bar-code" text="Scan" press="onScan"/>  -->
+								<ToolbarSpacer ></ToolbarSpacer>
+								<Button type="Emphasized" icon="sap-icon://excel-attachment" press="exportScanPress"></Button>
+								<Button icon="sap-icon://delete" type="Reject" press="DeletedataScanAllPress"></Button>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column hAlign="Begin">
+								<Label text="{i18n>MaterialCode}"></Label>
+							</Column>
+							<Column hAlign="Center">
+								<Label text="{i18n>Quantity}"></Label>
+							</Column>
+							<Column hAlign="End">
+								<Label text="Delete"></Label>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem >
+								<cells>
+									<Link text="{MaterialTable>MaterialCode}" press="TableListItemPress"></Link>
+									<Text text="{MaterialTable>Quantity}"></Text>
+									<Button icon="sap-icon://decline" type="Reject" press="DeleteSingleScanRowPress"></Button>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+				<footer>
+					<Toolbar >
+						<ToolbarSpacer></ToolbarSpacer>
+						<Button text="Confirm" press="ConfirmBtnSFGPress"></Button>
+						<Button text="Back" press="BackToHomePress"></Button>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,123 @@
+{
+	"SFG": [{
+		"header": {
+			"ConfirmNum": "2000",
+			"MaterialCode": "50000",
+			"MaterialDes": "Pipe",
+			"UnitOfMeasure": "1kg",
+			"Quantity": "30",
+			"Body": [{
+				"MaterialCode": "50000",
+				"MaterialDes": "Pipe",
+				"UnitOfMeasure": "1kg",
+				"Quantity": "54"
+			}, {
+				"MaterialCode": "60000",
+				"MaterialDes": "Polyester",
+				"UnitOfMeasure": "1kg",
+				"Quantity": "23"
+			}, {
+				"MaterialCode": "70000",
+				"MaterialDes": "Steel",
+				"UnitOfMeasure": "1kg",
+				"Quantity": "90"
+			}, {
+				"MaterialCode": "80000",
+				"MaterialDes": "Plastic",
+				"UnitOfMeasure": "1kg",
+				"Quantity": "20"
+			}]
+		}
+	},
+	{
+		"header": {
+			"ConfirmNum": "3000",
+			"MaterialCode": "50000",
+			"MaterialDes": "Pipe",
+			"UnitOfMeasure": "1kg",
+			"Quantity": "40",
+			"Body": [{
+				"MaterialCode": "55000",
+				"MaterialDes": "Pipe",
+				"UnitOfMeasure": "3kg",
+				"Quantity": "3"
+			}, {
+				"MaterialCode": "67000",
+				"MaterialDes": "Polyester",
+				"UnitOfMeasure": "1kg",
+				"Quantity": "23"
+			}, {
+				"MaterialCode": "90000",
+				"MaterialDes": "Steel",
+				"UnitOfMeasure": "1kg",
+				"Quantity": "65"
+			}, {
+				"MaterialCode": "82000",
+				"MaterialDes": "Plastic",
+				"UnitOfMeasure": "5kg",
+				"Quantity": "5"
+			},
+			{
+				"MaterialCode": "82500",
+				"MaterialDes": "Plastic",
+				"UnitOfMeasure": "2kg",
+				"Quantity": "6"
+			}]
+		}
+	},
+	{
+		"header": {
+			"ConfirmNum": "4000",
+			"MaterialCode": "66000",
+			"MaterialDes": "Pipe",
+			"UnitOfMeasure": "1kg",
+			"Quantity": "40",
+			"Body": [{
+				"MaterialCode": "68000",
+				"MaterialDes": "Pipe",
+				"UnitOfMeasure": "3kg",
+				"Quantity": "3"
+			}, {
+				"MaterialCode": "67000",
+				"MaterialDes": "Polyester",
+				"UnitOfMeasure": "1kg",
+				"Quantity": "23"
+			}, {
+				"MaterialCode": "98000",
+				"MaterialDes": "Steel",
+				"UnitOfMeasure": "1kg",
+				"Quantity": "65"
+			}, {
+				"MaterialCode": "89000",
+				"MaterialDes": "Plastic",
+				"UnitOfMeasure": "5kg",
+				"Quantity": "5"
+			}]
+		}
+	},
+	{
+		"header": {
+			"ConfirmNum": "5000",
+			"MaterialCode": "89000",
+			"MaterialDes": "Pipe",
+			"UnitOfMeasure": "1kg",
+			"Quantity": "40",
+			"Body": [{
+				"MaterialCode": "98000",
+				"MaterialDes": "Pipe",
+				"UnitOfMeasure": "3kg",
+				"Quantity": "5"
+			}, {
+				"MaterialCode": "78000",
+				"MaterialDes": "Polyester",
+				"UnitOfMeasure": "1kg",
+				"Quantity": "23"
+			}, {
+				"MaterialCode": "78000",
+				"MaterialDes": "Steel",
+				"UnitOfMeasure": "1kg",
+				"Quantity": "65"
+			}]
+		}
+	}]
+}

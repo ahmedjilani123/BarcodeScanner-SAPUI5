@@ -1,0 +1,28 @@
+{
+    "Sales": [
+        {
+            "SalesOrder": 6543,
+            "SalesOrderNo": 12234,
+            "CustomerName": "john",
+            "CustomerNumber": 7685478374,
+            "SalOrQuan": 75,
+            "SalTotalScan": 122
+        },
+        {
+            "SalesOrder": 659043,
+            "SalesOrderNo": 67834,
+            "CustomerName": "Maria",
+            "CustomerNumber": 454445877,
+            "SalOrQuan": 23,
+            "SalTotalScan": 122
+        },
+        {
+            "SalesOrder": 68797,
+            "SalesOrderNo": 109034,
+            "CustomerName": "Martin",
+            "CustomerNumber": 45454333445,
+            "SalOrQuan": 12,
+            "SalTotalScan": 122
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>ScannerBQ</title>
+
+		<script id="sap-ui-bootstrap"
+			src="https://sapui5.hana.ondemand.com/1.38.62/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{"sap.ajScannerBQ": ""}'>
+		</script>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell({
+					app: new sap.ui.core.ComponentContainer({
+						height : "100%",
+						name : "sap.ajScannerBQ"
+					})
+				}).placeAt("content");
+			});
+		</script>
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+
+</html>

@@ -1,0 +1,83 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.ajScannerBQ.controller.Scan3SF"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="SF Confirmation" showFooter="true" showNavButton="true" navButtonPress="BackToHomePress" showHeader="false" >
+				<content>
+						<core:Fragment fragmentName="sap.ajScannerBQ.fragments.mainHeader" type="XML"/>
+					<HBox justifyContent="Center" wrap="Wrap" backgroundDesign="Solid">
+						<VBox class="sapUiTinyMargin">
+							<Label text="{i18n>ProductOder}"></Label>
+							<Input showValueHelp="true" width="12rem" value="{SalesListSF>/SalesOrder}" valueHelpRequest="handleListDataPackingPress"></Input>
+						</VBox>
+						<VBox class="sapUiTinyMargin">
+							<Label text="{i18n>MaterialCode}"></Label>
+							<Input enabled="false" value="{SalesListSF>/SalesOrderNo}"></Input>
+						</VBox>
+						<VBox class="sapUiTinyMargin">
+							<Label text="{i18n>MaterialDes}"></Label>
+							<Input enabled="false"  value="{SalesListSF>/CustomerName}"></Input>
+						</VBox>
+						<VBox class="sapUiTinyMargin">
+							<Label text="{i18n>UnirOfMeasure}"></Label>
+							<Input enabled="false" value="{SalesListSF>/CustomerNumber}" ></Input>
+						</VBox>
+						<VBox class="sapUiTinyMargin">
+							<Label text="{i18n>Quantity}"></Label>
+							<Input enabled="false" value="{SalesListSF>/SalOrQuan}" ></Input>
+						</VBox>
+						<VBox class="sapUiTinyMargin">
+							<Label text="{i18n>TotalScan}"></Label>
+							<VBox justifyContent="End" alignContent="End" alignItems="End">
+								<Input enabled="false" value="{SalesListSF>/SalTotalScan}"></Input>
+								<Button text="Scan" type="Emphasized" press="onScanSFConfirmPress"></Button>
+							</VBox>
+						</VBox>
+						<!--<VBox class="sapUiTinyMargin">-->
+						<!--</VBox>-->
+					</HBox>
+				 <Table  id="exportTable" items="{SfConfirmation>/}"  inset="true" class="sapFDynamicPageAlignContent" growing="true" growingThreshold="10" width="auto">
+                        <headerToolbar >
+                        <Toolbar design="Solid">
+                        <Title text="Materials"></Title>
+                          <!-- <Button type="Neutral" icon="sap-icon://bar-code" text="Scan" press="onScan"/>  -->
+                         <ToolbarSpacer ></ToolbarSpacer>
+                        <Button type="Emphasized" icon="sap-icon://excel-attachment" press="exportScanPress"></Button>
+                        <Button icon="sap-icon://delete" type="Reject" press="DeletedataScanAllPress"></Button>
+                        </Toolbar>
+                        </headerToolbar>
+                        <columns>
+                       
+                        <Column  hAlign="Begin" >
+                        <Label text="{i18n>MaterialCode}"></Label>
+                        </Column>
+                        <Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+                        <Label text="{i18n>Quantity}"></Label>
+                        </Column>
+                        <Column hAlign="End" >
+                        <Label text="Delete"></Label>
+                        </Column>
+                        </columns>
+                        <items>
+                        <ColumnListItem >
+                        <cells>
+                        <Link text="{SfConfirmation>SalesOrderNo}" press="TableLinkPress"></Link>
+                        <Text text="{SfConfirmation>SalesOrderQuantity}"></Text>
+                        <Button icon="sap-icon://decline" type="Reject" press="DeleteSingleScanRowPress"></Button>
+                        </cells>
+                        </ColumnListItem>
+                        </items>
+                        </Table>
+				</content>
+				<footer>
+				<Toolbar >
+					<ToolbarSpacer></ToolbarSpacer>
+					<Button text="Confirm"></Button>
+					<Button text="Back" press="BackToHomePress"></Button>
+				</Toolbar>
+			</footer>
+			</Page>
+		
+		</pages>
+	</App>
+</mvc:View>
